@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Đăng Nhập Admin";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h4 style="color:red; text-align:center">@ViewBag.Thongbao</h4>
+<table align="center">
+    <br />
+    <br />
+
+    <h3 style="text-align:center">ĐĂNG NHẬP ADMIN</h3>
+    <hr />
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+        <tr style=" height:40px">
+            <td>Tài Khoản:  </td>
+            <td>
+                @Html.TextBox("User")
+                @ViewData["Loi1"]
+            </td>
+        </tr>
+        <tr style=" height:40px">
+            <td>Mật Khẩu:  </td>
+            <td>
+                @Html.Password("Pass")
+                @ViewData["Loi2"]
+            </td>
+        </tr>
+        <tr style=" height:40px">
+            <td></td>
+            <td>
+                <input type="submit" value="Đăng Nhập" />
+            </td>
+        </tr>
+    }
+</table>
+
